@@ -9,8 +9,6 @@ const btn = document.getElementById("btn");
 // span => scrittura risultato output
 const ticket = document.getElementById("ticket");
 
-
-
 ////  - applicato uno sconto del 20% per i minorenni
 //// if (age < 18) {
 ////     price -= price * 0.2;
@@ -31,24 +29,25 @@ const ticket = document.getElementById("ticket");
 //task organizzo l'output con l'eventlistener contenente
 //*----- I STEP => RACCOLTA DATI selezionati sopra con l'input!
 //*----- II STEP =>  IF + INNERHTML(stampa) risultato in ticket!
-btn.addEventListener("click", () => {
+btn.addEventListener("click", function (event) {
     età = età.value;
     km = km.value;
-    let price = ((km * .21).toFixed(2)); // questo va DENTRO per forza sennò distance non funziona!, .toFixed(2)!
+    let price = km * 0.21; //? perchè il tofixed applicato qui non funziona?
+    event.preventDefault()
 
-    //* if ternario con meccanismo applicazione sconto e stampa prezzo DENTRO a ticket
-    (età < 18) ? (price -= price * 0.2, ticket.innerHTML = `il prezzo è ${price} €`)
-        : (età >= 65) ? (price *= .6, ticket.innerHTML = `il prezzo è ${price} €`)
-            : (price, ticket.innerHTML = `il prezzo è ${price} €`);
-    return console.log(ticket);
+        //* if ternario con meccanismo applicazione sconto e stampa prezzo DENTRO a ticket
+        (età < 18) ? (price -= price * 0.2, ticket.innerHTML = `il prezzo è ${price.toFixed(2)} €`)  //vedi value 1
+        : (età >= 65) ? (price *= .6, ticket.innerHTML = `il prezzo è ${price.toFixed(2)} €`)        //vedi value 3
+            : (price, ticket.innerHTML = `il prezzo è ${price.toFixed(2)} €`);
+    console.log(ticket);
 });
 
-
-
 //task MILESTONE 2:
-// Solo una volta che il milestone 1 sarà completo e funzionante allora realizzeremo un form in pagina in cui l’utente potrà inserire i dati e visualizzare il calcolo finale con il prezzo.
-// Il recap dei dati e l'output del prezzo finale, andranno quindi stampati in pagina (il prezzo dovrà essere formattato con massimo due decimali, per indicare i centesimi sul prezzo).
-// Questo richiederà un minimo di ricerca.
+// realizzo un form in pagina in cui l’utente potrà inserire i dati e visualizzare il calcolo finale con il prezzo.
+// Il recap dei dati e l'output del prezzo finale, andranno quindi stampati in pagina
+// (il prezzo dovrà essere formattato con massimo due decimali, per indicare i centesimi sul prezzo)
+
+
 
 //task MILESTONE 3:
 // Ora che la logica è funzionante in pagina, possiamo andare a dedicarci allo stile, raffinando la parte di HTML e CSS in modo da renderla esteticamente gradevole.

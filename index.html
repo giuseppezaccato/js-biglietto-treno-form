@@ -12,20 +12,68 @@
 
 </head>
 
-<body>
+<body class="bg-success text-center">
+    <div class="container bg-success">
+        <h1 class="text-uppercase text-light mt-2">welcome to boorizon Express</h1>
+
+        <div class="row mt-2 justify-content-evenly ">
+
+            <div class="col-auto bg-dark rounded p-3 ">
+                <h4 class="text-light mb-3">calcola il prezzo del biglietto</h4>
+
+                <div class="input-group p-4 ">
+                    <input type="text" class="form-control" placeholder="Nome Cognome" required>
+                </div>
+
+                <div class="mb-3 p-4">
+                    <label for="km" class="form-labe text-light ">indica sotto quanti km intendi
+                        percorrere</label>
+                    <input type="number" class="form-control" id="km" required min="0">
+                </div>
+
+                <div class="input-group mb-3 p-3">
+                    <label class="input-group-text" for="età">Fascia D'Età</label>
+                    <select class="form-select" id="età" required>
+                        <option selected hidden>scegli...</option>
+                        <option value="1">Minorenne</option>
+                        <option value="2">Maggiorenne</option>
+                        <option value="3">Over 65</option>
+                    </select>
+                </div>
+
+                <div class="col-12">
+                    <button class="btn btn-primary" id="btn" type="submit">Calcola</button>
+                </div>
+            </div>
+
+
+            <div class=" col-auto card p-2">
+                <h5 class="card-title text-capitalize" id="passenger">Nome passeggero</h5>
+                <img src="./img/train.png" height="300" class="card-img-top p-3" alt="train">
+                <div class="card-body">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item" id="discount">Biglietto Standard</li>
+                        <li class="list-group-item" id="idcorsa">Numero Corsa</li>
+                        <li class="list-group-item" id="ticket">Prezzo Biglietto</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+
+
     <input id="age" type="number" placeholder="inserisci qui la tua età">
     <input id="km" type="number" placeholder="inserisci quanti km intendi percorrere">
     <button id="btn"> Genera </button>
-
     <span id="ticket"> prezzo Biglietto</span>
-
-
-
-
-
-
-
-
 
     <script src="./main.js"></script>
     <!-- bootstrap js -->

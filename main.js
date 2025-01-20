@@ -32,8 +32,12 @@ const ticket = document.getElementById("ticket");
 //*----- III STEP => IF + INNERHTML
 go.addEventListener("click", function (event) {
 
-    biglietto.classList.replace('d-none', 'd-flex');
+    // biglietto.classList.replace('d-none', 'd-flex');
+    //ricorda di aggiungere d-none a biglietto se vuoi usare questo! 
+    // in questo modo scomparirà TUTTA la card da stampare prima del click su "calcola"
 
+    biglietto.style.opacity = 1;
+    // cerca del biglietto il suo style e ne cambia l'opacity a 1 con la transizione a riga 17html
 
     event.preventDefault()
 
@@ -47,7 +51,7 @@ go.addEventListener("click", function (event) {
     //* if ternario con meccanismo applicazione sconto e stampa prezzo DENTRO a ticket
     (età == "minorenne") ? (price -= price * 0.2, discount.innerHTML = `Tariffa ${età}`, ticket.innerHTML += ` ${price.toFixed(2)} €`)
         : (età == "over") ? (price *= .6, discount.innerHTML = `Tariffa ${età}`, ticket.innerHTML += `${price.toFixed(2)} €`)
-            : (discount.innerHTML = `Tariffa ${età}`, ticket.innerHTML += `${price.toFixed(2)} €`);
+            : (discount.innerHTML = `Tariffa standard`, ticket.innerHTML += `${price.toFixed(2)} €`);
     console.log(ticket);
 
 });

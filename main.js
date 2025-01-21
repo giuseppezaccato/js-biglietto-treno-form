@@ -34,8 +34,8 @@ const ticket = document.getElementById("ticket");
 //*----- III STEP => IF + INNERHTML
 go.addEventListener("click", function (event) {
 
-    // biglietto.classList.replace('d-none', 'd-flex'); oppure elimina sempicemente d-none con .remove!
-    //ricorda di aggiungere d-none a biglietto se vuoi usare questo! 
+    // biglietto.classList.replace('d-none', 'd-flex'); ||  sempicemente // biglietto.classList.remove(d-none)
+    // ricorda di aggiungere d-none a biglietto se vuoi usare questo! 
     // in questo modo scomparirà TUTTA la card da stampare prima del click su "calcola"
 
     biglietto.style.opacity = 1;

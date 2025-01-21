@@ -26,13 +26,15 @@ const ticket = document.getElementById("ticket");
 // Iniziamo implementando il programma senza alcuna estetica: usando esclusivamente due input e un bottone (non stilizzati),
 //  realizziamo le specifiche scritte sopra. La risposta finale (o output) sarà anch’essa da scrivere in console.
 
+//! MANCA IL TAG FORM! ricorda di usarlo quando si parla di raccolta dati dall'utente!!!
+
 //task organizzo l'output con l'eventlistener contenente
 //*----- I STEP => RACCOLTA DATI selezionati sopra con l'input!
 //*----- II STEP => (stampa) risultato nel biglietto d-none e cambia class in d-flex
 //*----- III STEP => IF + INNERHTML
 go.addEventListener("click", function (event) {
 
-    // biglietto.classList.replace('d-none', 'd-flex');
+    // biglietto.classList.replace('d-none', 'd-flex'); oppure elimina sempicemente d-none con .remove!
     //ricorda di aggiungere d-none a biglietto se vuoi usare questo! 
     // in questo modo scomparirà TUTTA la card da stampare prima del click su "calcola"
 
@@ -42,7 +44,7 @@ go.addEventListener("click", function (event) {
     event.preventDefault()
 
     identity.innerHTML = identityField.value;
-    idcorsa.innerHTML += Math.floor(Math.random() * 9000) + 1;
+    idcorsa.innerHTML += Math.floor(Math.random() * 9000) + 1000;
 
     età = età.value;
     km = km.value;
